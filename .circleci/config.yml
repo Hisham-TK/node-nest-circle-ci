@@ -7,7 +7,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - node/install:
-          node-version: 10.19.0
+          # node-version: 10.19.0
       - run: echo 'NODE Version:' && node --version
       - run: echo 'NPM Version:' && npm --version
 workflows:
