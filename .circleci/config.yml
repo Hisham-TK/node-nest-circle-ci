@@ -1,7 +1,6 @@
-orbs:
-  heroku: circleci/heroku@1.1
-  node: circleci/node@4.1.0
 version: 2.1
+orbs:
+  node: circleci/node@4.1.0
 workflows:
   test-and-deploy:
     jobs:
