@@ -8,8 +8,8 @@ jobs:
     steps:
       - node/install
           # node-version: 10.19.0
-      - run: echo 'NODE Version: ' && node --version
-      - run: echo 'NPM Version:' && npm --version
+      - run: echo NODE Version && node --version
+      - run: echo NPM Version && npm --version
 workflows:
   test-and-deploy:
     jobs:
