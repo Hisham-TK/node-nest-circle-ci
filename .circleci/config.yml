@@ -1,13 +1,30 @@
-version: 2.1
+# version: 2.1
+# orbs:
+#   node: circleci/node@4.1.0
+# workflows:
+#   test-and-deploy:
+#     jobs:
+#       - node/test:
+#           filters:
+#             branches:
+#               only:
+#                 - master
+#           # requires:
+#           #   - node/test
+
+jobs:
+  install-node-example:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+      - run: node --version
 orbs:
   node: circleci/node@4.1.0
+version: 2.1
 workflows:
-  test-and-deploy:
+  test_my_app:
     jobs:
-      - node/test:
-          filters:
-            branches:
-              only:
-                - master
-          # requires:
-          #   - node/test
+      - install-node-example
