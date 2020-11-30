@@ -4,7 +4,7 @@ orbs:
 jobs:
   show-versions:
     docker:
-      - image: cimg/base@2020.11
+      - image: cimg/base:2020.1
     steps:
       - node/install:
           node-version: 10.19.0
@@ -14,14 +14,15 @@ workflows:
   test-and-deploy:
     jobs:
       - show-versions
-      - node/test:
-          # version: 14.15.1
-          filters:
-            branches:
-              only:
-                - master
-          # requires:
-          #   - node/test
+      # - node/test:
+      #     # version: 14.15.1
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master
+      #     # requires:
+      #     #   - node/test
+
 # version: 2.1
 # orbs:
 #   node: circleci/node@4.1.0
