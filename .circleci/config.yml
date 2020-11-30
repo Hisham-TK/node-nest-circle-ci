@@ -6,6 +6,8 @@ jobs:
     docker:
       - image: cimg/base@2020.01
     steps:
+      - node/install:
+          version: 10.19.0
       - run: echo 'NODE Version:' && node --version
       - run: echo 'NPM Version:' && npm --version
 workflows:
@@ -13,7 +15,7 @@ workflows:
     jobs:
       - show-versions
       - node/test:
-          version: 14.15.1
+          # version: 14.15.1
           filters:
             branches:
               only:
