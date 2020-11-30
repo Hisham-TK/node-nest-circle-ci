@@ -15,7 +15,7 @@
 jobs:
   install-node-example:
     docker:
-      - image: 'cimg/base:stable'
+      - image: cimg/base:stable
     steps:
       - checkout
       - node/install:
