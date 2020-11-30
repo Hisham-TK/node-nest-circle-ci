@@ -6,7 +6,9 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - node/install
+      - run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+      - run: nvm install 10.14.0
+      # - node/install
           # node-version: 10.19.0
       - run: echo NODE Version && node --version
       - run: echo NPM Version && npm --version
