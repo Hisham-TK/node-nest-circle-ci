@@ -1,30 +1,38 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.1.0
+jobs:
+  show-versions:
+    docker:
+      - image: cimg/node@4.1.0
+    steps:
+      - run: echo 'NODE Version:' && node --version
+      - run: echo 'NPM Version:' && npm --version
+workflows:
+  test-and-deploy:
+    jobs:
+      - show-versions
+      - node/test:
+          version: 14.15.1
+          filters:
+            branches:
+              only:
+                - master
+          # requires:
+          #   - node/test
 # version: 2.1
 # orbs:
 #   node: circleci/node@4.1.0
+# jobs:
+#   my-job-name:
+#     docker:
+#       - image: cimg/base:stable
+#     steps:
+#       # - checkout
+#       - node/install:
+#           # install-yarn: true
+#       - run: node --version
 # workflows:
-#   test-and-deploy:
+#   my-workflow-name:
 #     jobs:
-#       - node/test:
-#           filters:
-#             branches:
-#               only:
-#                 - master
-#           # requires:
-#           #   - node/test
-
-jobs:
-  install-node-example:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - node/install:
-          install-yarn: true
-      - run: node --version
-orbs:
-  node: circleci/node@4.1.0
-version: 2.1
-workflows:
-  test_my_app:
-    jobs:
-      - install-node-example
+#       - my-job-name
