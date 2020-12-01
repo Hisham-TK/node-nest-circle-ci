@@ -14,49 +14,49 @@ workflows:
   test-and-deploy:
     jobs:
       - node/test:
-          version: 14.1
+          version: 14.10.0
           filters:
             branches:
               only:
                 - master
       - node/test:
-          version: 12.1
+          version: 12.10.0
           filters:
             branches:
               only:
                 - master
       - node/test:
-          version: 10.1
+          version: 10.10.0
           filters:
             branches:
               only:
                 - master
       - node/test:
-          version: 8.1
+          version: 8.10.0
           filters:
             branches:
               only:
                 - master
       - node/test:
-          version: 6.1
+          version: 6.10.0
           filters:
             branches:
               only:
                 - master
       - node/test:
-          version: 4.1
+          version: 4.10.0
           filters:
             branches:
               only:
                 - master
       - node/test:
-          version: 2.1
+          version: 2.10.0
           filters:
             branches:
               only:
                 - master
       - node/test:
-          version: 0.1
+          version: 0.10.0
           filters:
             branches:
               only:
