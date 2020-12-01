@@ -6,9 +6,6 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - checkout:
-          name: 'Test'
-          path: 'test'
       # - run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
       # - run: export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
       # - run: nvm install 10.14.0
@@ -19,15 +16,16 @@ jobs:
 workflows:
   test-and-deploy:
     jobs:
+      - node/test:
+          version: 14.15.1
+          filters:
+            branches:
+              only:
+                - master
       - show-versions
-      # - node/test:
-      #     # version: 14.15.1
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
       #     # requires:
       #     #   - node/test
+
 # version: 2.1
 # orbs:
 #   node: circleci/node@4.1.0
