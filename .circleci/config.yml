@@ -20,19 +20,3 @@ workflows:
               only:
                 - master
       # - show-versions
-# version: 2.1
-# orbs:
-#   node: circleci/node@4.1.0
-# jobs:
-#   my-job-name:
-#     docker:
-#       - image: cimg/base:stable
-#     steps:
-#       # - checkout
-#       - node/install:
-#           # install-yarn: true
-#       - run: node --version
-# workflows:
-#   my-workflow-name:
-#     jobs:
-#       - my-job-name
