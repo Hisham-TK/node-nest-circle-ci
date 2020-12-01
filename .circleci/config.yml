@@ -1,15 +1,15 @@
 version: 2.1
 orbs:
   node: circleci/node@4.1.0
-jobs:
-  show-versions:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - node/install:
-          node-version: 10.19.0
-      - run: echo NODE Version && node --version
-      - run: echo NPM Version && npm --version
+# jobs:
+#   show-versions:
+#     docker:
+#       - image: cimg/base:stable
+#     steps:
+#       - node/install:
+#           node-version: 10.19.0
+#       - run: echo NODE Version && node --version
+#       - run: echo NPM Version && npm --version
 workflows:
   test-and-deploy:
     jobs:
@@ -19,20 +19,7 @@ workflows:
             branches:
               only:
                 - master
-      - node/test:
-          version: 12.19.1
-          filters:
-            branches:
-              only:
-                - master
-      - node/test:
-          version: 10.22.1
-          filters:
-            branches:
-              only:
-                - master
       # - show-versions
-
 # version: 2.1
 # orbs:
 #   node: circleci/node@4.1.0
