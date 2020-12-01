@@ -19,9 +19,52 @@ workflows:
             branches:
               only:
                 - master
-      - show-versions:
-          requires:
-            - node/test
+      - node/test:
+          version: 12.15.1
+          filters:
+            branches:
+              only:
+                - master
+      - node/test:
+          version: 10.15.1
+          filters:
+            branches:
+              only:
+                - master
+      - node/test:
+          version: 8.15.1
+          filters:
+            branches:
+              only:
+                - master
+      - node/test:
+          version: 6.15.1
+          filters:
+            branches:
+              only:
+                - master
+      - node/test:
+          version: 4.15.1
+          filters:
+            branches:
+              only:
+                - master
+      - node/test:
+          version: 2.15.1
+          filters:
+            branches:
+              only:
+                - master
+      - node/test:
+          version: 0.15.1
+          filters:
+            branches:
+              only:
+                - master
+          
+      # - show-versions:
+      #     requires:
+      #       - node/test
 # version: 2.1
 # orbs:
 #   node: circleci/node@4.1.0
