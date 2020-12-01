@@ -31,13 +31,7 @@ workflows:
             branches:
               only:
                 - master
-      - node/test:
-          version: 8.17.0
-          filters:
-            branches:
-              only:
-                - master
-          
+
       # - show-versions:
       #     requires:
       #       - node/test
