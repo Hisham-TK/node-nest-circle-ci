@@ -7,7 +7,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-      - run: nvm install 10.14.0
+      - run: sleep 3
+      - run: base -c "nvm install 10.14.0"
       # - node/install
           # node-version: 10.19.0
       - run: echo NODE Version && node --version
